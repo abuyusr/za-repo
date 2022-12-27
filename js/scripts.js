@@ -1,4 +1,3 @@
-alert('Hello world');
+alert('Hello family');
 // added favorite food
 
-document.write('favorite food :Pizza');
