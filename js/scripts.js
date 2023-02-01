@@ -79,11 +79,56 @@ let pokemonRepository =(function(){
     // Adding a showModal function to make the modal interactive.
     // Achieving dynamism of showModal fucntion by editing title and text as paramaters.
     
-    function showModal( title, text,img) {
-      let modalContainer = document.querySelector('#modal-container');
+    function showModal( pokemon) {
+       
+          let modalBody = document.querySelector (".modal-body");
+          let modalTitle = document.querySelector(".modal-title");
+         
+  
+  
+          // Emptying previous modal content
+          modalTitle.innerHTML = '';
+          modalBody.innerHTML = '';
 
-      // Clear all  existing model content.
-      modalContainer.innerHTML='';
+
+          // Creating a new Div Element and class
+            let modal = document.createElement('div');
+            modal.classList.add ('modal');
+
+   
+
+            let titleElement = document.createElement('h1');
+            titleElement.innerText = title;
+            
+          
+            let contentElement = document.createElement('p');
+            contentElement.innerText = text;
+            
+
+            let imageElement = document.createElement("img");
+              imageElement.setAttribute ("src", img);
+              imageElement.setAttribute ("widh", "304");
+              imageElement.setAttribute ("height" , "228");
+              imageElement.setAttribute ("alt", "The Pokemon picture");
+
+
+              modalBody.appendChild(titleElement);
+              modalBody.appendChild(contentElement);
+              modalBody.appendChild(imageElement);
+          
+        }
+
+        
+       
+     
+       
+        /*  let modalBody = document.querySelector (".modal-body");
+         let modalTitle = document.querySelector(".modal-title");
+         let modalHeader =document.querySelector(".modal-header");
+
+
+         modalTitle.empty();
+         modalBody.empty();
 
       // Creating a new Div Element and class
       let modal = document.createElement('div');
@@ -139,7 +184,7 @@ let pokemonRepository =(function(){
      function hideModal () {
       let modalContainer = document.querySelector('#modal-container');
       modalContainer.classList.remove ('is-visible');
-     }
+     } */
 
   // Declaring  ESC keyboard function (This will remove modal by pressing ESC Key) 
      window.addEventListener ('keydown',(e)=> {
